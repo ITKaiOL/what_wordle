@@ -3,7 +3,9 @@
 <title>Wordle Chart</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
+<script> window.onload = function() { function cd(c) { setTimeout(function() { document.getElementById("stoper-seconds").innerHTML = (--c)+" second"+(c>1?"s":""); if(c>0) cd(c); else { document.getElementById("stopper").style.display="none"; } }, 1000); }; cd(10); }; </script>
 </head><body>
+<div id="stopper"><p><span id="stoper-seconds">10 seconds</span> before you ruin your Wordle game.<br>You should LEAVE NOW if you still want to play.</p></div>
 <p class="note">Data from: <a href="https://www.reddit.com/r/wordle/comments/s4tcw8/a_note_on_wordles_word_list/">https://www.reddit.com/r/wordle/comments/s4tcw8/a_note_on_wordles_word_list/</a></p>
 <div class="card" id="card_tree1" style="display: flex">
 <button onclick="document.getElementById('card_tree1').style.display='none';document.getElementById('card_tree2').style.display='flex';">Use all guessable words</button>

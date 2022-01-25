@@ -10,6 +10,22 @@ body {
   font-family: sans-serif;
   font-weight: bold;
 }
+#stopper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(16, 16, 16);
+  font-size: 1.5em;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#stopper p {
+  text-align: center;
+}
 button {
   margin: 0.5em;
   padding: 0.5em;
