@@ -1,5 +1,7 @@
 # Solution to Wordle
 
+**Stop reading this if you don't want any spoilers to the game Wordle**
+
 I made this for own research only. The result shows that it is possible to guess any of the answers in 6 guesses -- if you know the list of possible answers.
 
 The (estimated) best first guess is **RAISE** if you only guess word that could be an answer. Otherwise, **SOARE** gives slightly better average.
