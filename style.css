@@ -1,15 +1,35 @@
+/* basic structure */
 html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 body {
-  margin: 0 0 1.5em;
+  margin: 0;
   padding: 0;
   background-color: rgb(16, 16, 16);
   color: white;
   font-family: sans-serif;
   font-weight: bold;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
 }
+p.note {
+  margin: 0.25em;
+  padding: 0.125em;
+  position: fixed;
+  bottom: 0;
+  right: 1em;
+  text-align: right;
+}
+p.note a {
+  color: yellow;
+}
+
+/* front stopper */
 #stopper{
   position: fixed;
   top: 0;
@@ -26,81 +46,62 @@ body {
 #stopper p {
   text-align: center;
 }
+
+/* structure (button + content) */
+div.buttons {
+  display: flex;
+  flex-flow: row wrap;
+}
+div.contents {
+  flex-grow: 1;
+  overflow: auto;
+  padding-bottom: 1.75em;
+}
 button {
   margin: 0.5em;
   padding: 0.5em;
 }
-div.card{
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-p.note {
-  margin: 0.25em;
-  padding: 0.125em;
-  position: fixed;
-  bottom: 0;
-  right: 1em;
-  text-align: right;
-}
-p.note a {
-  color: yellow;
-}
-p.stat {
-  margin: 0.25em 1.5em;
-  padding: 0.125em;
-  position: fixed;
-  top: 0;
-  right: 0;
-  text-align: left;
-}
-div.box {
-  margin: 0.25em;
-  padding: 0.25em;
-  border-radius: 0.5em;
-  border: 0.0625em solid rgb(150, 150, 150);
-  background-color: rgba(0, 0, 255, 0.05);
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-}
-div.box1 {
-  font-size: 0.5em;
-  border: none;
-  flex-grow: 1;
-  overflow: auto;
-}
-div.index {
-  display: flex;
-  flex-flow: row wrap;
-  font-size: 0.5em;
-}
-div.guess-results {
-  margin: 0.25em;
-  padding: 0.25em;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  justify-content: flex-start;
-}
-div.guess-result {
-  background-color: rgba(255, 0, 0, 0.1);
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: flex-flex-start;
-  border-top: 1px solid rgb(25, 25, 25);
-  border-bottom: 1px solid rgb(25, 25, 25);
-}
-div.guess-result:nth-child(odd) {
-  background-color: rgba(0, 255, 0, 0.1);
+button.on {
+  background-color: rgb(200, 200, 40);
 }
 
-div.guess {
+/* cards */
+section {
+  font-size: 0.6em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+div.stat {
+  position: fixed;
+  top: 1em;
+  right: 1.75em;  
+  font-size: 1.5em;
+}
+
+/* guess group */
+div.guess-group {
+  padding: 0.5em;
+  margin: 0.5em 0.25em;
+  border: 0.125em solid rgba(80, 80, 150, 0.5);
+  border-radius: 0.5em;
+  background-color: rgba(100, 100, 200, 0.1);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+div.guess-result {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+/* guess word */
+div.guess-word {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -115,24 +116,17 @@ span.guess-char {
   height: 1.25em;
   margin: 0.125em;
   text-transform: uppercase;
-}
-span.guess-char-Y {
-  background-color: rgb(80, 140, 80);
-}
-span.guess-char-X {
-  background-color: rgb(180, 160, 60);
-}
-div.guess-result-word-case {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5em;  
-}
-div.guess > span.guess-char {
   border: 1px solid rgb(100, 100, 100);
 }
-div.guess-result-word-case > span.guess-char {
+span.guess-char-C {
+  background-color: rgb(80, 140, 80);
+  border: 1px solid rgb(200, 200, 200);
+}
+span.guess-char-P {
+  background-color: rgb(180, 160, 60);
+  border: 1px solid rgb(200, 200, 200);
+}
+span.guess-char-_ {
   border: 1px solid rgb(200, 200, 200);
 }
 div.guess-arrow {
@@ -143,4 +137,11 @@ div.guess-arrow {
   height: 1.25em;
   margin: 0.125em;
   font-size: 1.5em;
+}
+div.guess-result-extended > div.guess-word,
+div.guess-result-extended > div.guess-arrow {
+  padding-top: 0.75em;
+}
+div.guess-word-collapsed {
+  padding-left: 0.5em;
 }
