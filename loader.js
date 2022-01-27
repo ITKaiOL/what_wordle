@@ -1,6 +1,10 @@
 (function() {
 
+<<<<<<< HEAD
   const COUNTDOWN_TIME = 8;
+=======
+  const COUNTDOWN_TIME = 1;
+>>>>>>> 9cc782742b7a7e3b17f8b8c38aeebc5f2847b06c
   const REF = 'https://www.reddit.com/r/wordle/comments/s4tcw8/a_note_on_wordles_word_list/';
 
   const dataFiles = [
